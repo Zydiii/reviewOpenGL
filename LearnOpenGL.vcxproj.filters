@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="glad.c">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stb_image.c">
+      <Filter>头文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="1-windows.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="2-triangle.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="setting.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="3-Rectangle.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="4-TwoTriangle.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="5-TwoTriangle.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="6-TwoTriangleYellow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="7-RedTriangle.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="8-ChangeColorTriangle.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="9-DifferentColorTriangle.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="shader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="10-ReverseTriangle.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="11-OffsetTriangle.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="12-PositionColorTriangle.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="13-TextureMappingTriangle.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="14-MixTextureTriangle.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="15-ReverseFaceTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="16-FourFace.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="17-CenterFace.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="18-mixFace.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="19-Translate.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ShaderSource\10-GeometryShader.fs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="ShaderSource\10-VertexShader.vs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="ShaderSource\11-GeometryShader.fs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="ShaderSource\11-VertexShader.vs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="ShaderSource\12-GeometryShader.fs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="ShaderSource\12-VertexShader.vs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="ShaderSource\13-GeometryShader.fs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="ShaderSource\13-VertexShader.vs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="ShaderSource\14-GeometryShader.fs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="ShaderSource\14-VertexShader.vs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="ShaderSource\15-GeometryShader.fs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="ShaderSource\15-VertexShader.vs">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+</Project>
