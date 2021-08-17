@@ -6,7 +6,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-int doTranslate()
+int doScaleBox()
 {
     /* 配置 glfw */
     // 在main函数中调用glfwInit函数来初始化GLFW
@@ -51,11 +51,11 @@ int doTranslate()
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
     float vertices[] = {
-        // positions          // colors           // texture coords
-         0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f, // top right
-         0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f, // bottom right
-        -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f, // bottom left
-        -0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f  // top left 
+        // positions           // texture coords
+         0.5f,  0.5f, 0.0f,    1.0f, 1.0f, // top right
+         0.5f, -0.5f, 0.0f,    1.0f, 0.0f, // bottom right
+        -0.5f, -0.5f, 0.0f,    0.0f, 0.0f, // bottom left
+        -0.5f,  0.5f, 0.0f,    0.0f, 1.0f  // top left 
     };
     unsigned int indices[] = {
         0, 1, 3, // first triangle
@@ -65,7 +65,7 @@ int doTranslate()
     glm::mat4 trans(1.0f);
     trans = glm::rotate(trans, glm::radians(90.0f), glm::vec3(0.0, 0.0, 1.0));
     trans = glm::scale(trans, glm::vec3(0.5, 0.5, 0.5));
-    
+
 
     unsigned int VBO, VAO, EBO;
     glGenVertexArrays(1, &VAO);
@@ -81,14 +81,11 @@ int doTranslate()
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
     // position attribute
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
-    // color attribute
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
-    glEnableVertexAttribArray(1);
     // texture coord attribute
-    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
-    glEnableVertexAttribArray(2);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
 
     /* 纹理设置 */
         // load and create a texture 
@@ -143,7 +140,7 @@ int doTranslate()
     }
     stbi_image_free(data);
 
-    Shader ourShader("ShaderSource/16-VertexShader.vs", "ShaderSource/16-GeometryShader.fs");
+    Shader ourShader("ShaderSource/17-VertexShader.vs", "ShaderSource/17-GeometryShader.fs");
 
     /* 渲染循环 */
     // 我们希望程序在我们主动关闭它之前不断绘制图像并能够接受用户输入。
@@ -163,14 +160,6 @@ int doTranslate()
     ourShader.use(); // 不要忘记在设置uniform变量之前激活着色器程序！
     glUniform1i(glGetUniformLocation(ourShader.ID, "texture1"), 0); // 手动设置
     ourShader.setInt("texture2", 1); // 或者使用着色器类设置
-    // 首先查询uniform变量的地址，然后用有Matrix4fv后缀的glUniform函数把矩阵数据发送给着色器。
-    // 第一个参数是uniform的位置值。第二个参数告诉OpenGL我们将要发送多少个矩阵，这里是1。
-    // 第三个参数询问我们我们是否希望对我们的矩阵进行置换(Transpose)，也就是说交换我们矩阵的行和列。
-    // OpenGL开发者通常使用一种内部矩阵布局，叫做列主序(Column - major Ordering)布局。
-    // GLM的默认布局就是列主序，所以并不需要置换矩阵，我们填GL_FALSE。
-    // 最后一个参数是真正的矩阵数据，但是GLM并不是把它们的矩阵储存为OpenGL所希望接受的那种，因此我们要先用GLM的自带的函数value_ptr来变换这些数据。
-    unsigned int transformLoc = glGetUniformLocation(ourShader.ID, "transform");
-    glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
 
     while (!glfwWindowShouldClose(window))
     {
@@ -193,15 +182,28 @@ int doTranslate()
         glm::mat4 transform = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
         transform = glm::translate(transform, glm::vec3(0.5f, -0.5f, 0.0f));
         transform = glm::rotate(transform, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
-
-        // set the texture mix value in the shader
-        ourShader.setFloat("mixValue", mixValue);
-
-        ourShader.use();
+        // get their uniform location and set matrix (using glm::value_ptr)
         unsigned int transformLoc = glGetUniformLocation(ourShader.ID, "transform");
         glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(transform));
 
+        // set the texture mix value in the shader
+        //ourShader.setFloat("mixValue", mixValue);
+
+        ourShader.use();
+
+
         glBindVertexArray(VAO);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+        // second transformation
+        // ---------------------
+        transform = glm::mat4(1.0f); // reset it to identity matrix
+        transform = glm::translate(transform, glm::vec3(-0.5f, 0.5f, 0.0f));
+        float scaleAmount = sin(glfwGetTime());
+        transform = glm::scale(transform, glm::vec3(scaleAmount, scaleAmount, scaleAmount));
+        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, &transform[0][0]); // this time take the matrix value array's first element as its memory pointer value
+
+        // now with the uniform matrix being replaced with new transformations, draw it again.
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
         // glfwSwapBuffers函数会交换颜色缓冲（它是一个储存着GLFW窗口每一个像素颜色值的大缓冲），它在这一迭代中被用来绘制，并且将会作为输出显示在屏幕上。

@@ -157,8 +157,13 @@
     <ClInclude Include="16-FourFace.h" />
     <ClInclude Include="17-CenterFace.h" />
     <ClInclude Include="18-mixFace.h" />
+    <ClInclude Include="20-ScaleBox.h" />
     <ClInclude Include="19-Translate.h" />
     <ClInclude Include="2-triangle.h" />
+    <ClInclude Include="21-System.h" />
+    <ClInclude Include="22-3DBox.h" />
+    <ClInclude Include="23-Camera.h" />
+    <ClInclude Include="24-MovingCamera.h" />
     <ClInclude Include="3-Rectangle.h" />
     <ClInclude Include="4-TwoTriangle.h" />
     <ClInclude Include="5-TwoTriangle.h" />
@@ -166,6 +171,7 @@
     <ClInclude Include="7-RedTriangle.h" />
     <ClInclude Include="8-ChangeColorTriangle.h" />
     <ClInclude Include="9-DifferentColorTriangle.h" />
+    <ClInclude Include="camera.h" />
     <ClInclude Include="setting.h" />
     <ClInclude Include="shader.h" />
     <ClInclude Include="stb_image.h" />

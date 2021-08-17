@@ -17,6 +17,11 @@
 #include "17-CenterFace.h"
 #include "18-mixFace.h"
 #include "19-Translate.h"
+#include "20-ScaleBox.h"
+#include "21-System.h"
+#include "22-3DBox.h"
+#include "23-Camera.h"
+#include "24-MovingCamera.h"
 
 int main()
 {
@@ -38,7 +43,12 @@ int main()
 	//drawFourFaceTexture();
 	//drawCenterFaceTexture();
 	//drawMixFaceTexture();
-	doTranslate();
+	//doTranslate();
+	//doScaleBox();
+	//doSystem();
+	//draw3DBox();
+	//doCamera();
+	movingCamera();
 
 	return 0;
 }

@@ -92,6 +92,24 @@
     <ClInclude Include="19-Translate.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="20-ScaleBox.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="21-System.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="22-3DBox.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="23-Camera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="24-MovingCamera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="ShaderSource\10-GeometryShader.fs">
