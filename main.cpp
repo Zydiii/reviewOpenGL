@@ -22,6 +22,8 @@
 #include "22-3DBox.h"
 #include "23-Camera.h"
 #include "24-MovingCamera.h"
+#include "25-color.h"
+#include "26-lighting.h"
 
 int main()
 {
@@ -48,7 +50,9 @@ int main()
 	//doSystem();
 	//draw3DBox();
 	//doCamera();
-	movingCamera();
+	//movingCamera();
+	//drawColor();
+	drawLight();
 
 	return 0;
 }

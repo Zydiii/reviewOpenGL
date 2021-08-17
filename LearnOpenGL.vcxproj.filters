@@ -110,6 +110,12 @@
     <ClInclude Include="camera.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="25-color.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="26-lighting.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="ShaderSource\10-GeometryShader.fs">

@@ -164,6 +164,8 @@
     <ClInclude Include="22-3DBox.h" />
     <ClInclude Include="23-Camera.h" />
     <ClInclude Include="24-MovingCamera.h" />
+    <ClInclude Include="25-color.h" />
+    <ClInclude Include="26-lighting.h" />
     <ClInclude Include="3-Rectangle.h" />
     <ClInclude Include="4-TwoTriangle.h" />
     <ClInclude Include="5-TwoTriangle.h" />
