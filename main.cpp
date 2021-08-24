@@ -24,6 +24,16 @@
 #include "24-MovingCamera.h"
 #include "25-color.h"
 #include "26-lighting.h"
+#include "27-perspectiveLighting.h"
+#include "28-GouraudLighting.h"
+#include "29-Material.h"
+#include "30-TextureLighting.h"
+#include "31-EmissionMap.h"
+#include "32-ParallelLighting.h"
+#include "33-pointLighting.h"
+#include "34-SpotLighting.h"
+#include "35-MultipleLight.h"
+#include "36-Assimp.h"
 
 int main()
 {
@@ -52,7 +62,17 @@ int main()
 	//doCamera();
 	//movingCamera();
 	//drawColor();
-	drawLight();
+	//drawLight();
+	//drawPerspectiveLight();
+	//drawGouraudLight();
+	//drawMaterial();
+	//drawTextureLighting();
+	//drawEmissionMap();
+	//drawParallelLighting();
+	//drawPointLight();
+	//drawSpotLight();
+	//drawMultipleLight();
+	assimpModel();
 
 	return 0;
 }

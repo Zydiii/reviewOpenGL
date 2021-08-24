@@ -94,7 +94,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;assimp-vc142-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -166,7 +166,15 @@
     <ClInclude Include="24-MovingCamera.h" />
     <ClInclude Include="25-color.h" />
     <ClInclude Include="26-lighting.h" />
+    <ClInclude Include="28-GouraudLighting.h" />
+    <ClInclude Include="29-Material.h" />
     <ClInclude Include="3-Rectangle.h" />
+    <ClInclude Include="30-TextureLighting.h" />
+    <ClInclude Include="31-EmissionMap.h" />
+    <ClInclude Include="32-ParallelLighting.h" />
+    <ClInclude Include="34-SpotLighting.h" />
+    <ClInclude Include="35-MultipleLight.h" />
+    <ClInclude Include="36-Assimp.h" />
     <ClInclude Include="4-TwoTriangle.h" />
     <ClInclude Include="5-TwoTriangle.h" />
     <ClInclude Include="6-TwoTriangleYellow.h" />
@@ -174,6 +182,10 @@
     <ClInclude Include="8-ChangeColorTriangle.h" />
     <ClInclude Include="9-DifferentColorTriangle.h" />
     <ClInclude Include="camera.h" />
+    <ClInclude Include="27-perspectiveLighting.h" />
+    <ClInclude Include="33-pointLighting.h" />
+    <ClInclude Include="mesh.h" />
+    <ClInclude Include="model.h" />
     <ClInclude Include="setting.h" />
     <ClInclude Include="shader.h" />
     <ClInclude Include="stb_image.h" />
@@ -191,6 +203,16 @@
     <None Include="ShaderSource\14-VertexShader.vs" />
     <None Include="ShaderSource\15-GeometryShader.fs" />
     <None Include="ShaderSource\15-VertexShader.vs" />
+    <None Include="ShaderSource\16-GeometryShader.fs" />
+    <None Include="ShaderSource\16-VertexShader.vs" />
+    <None Include="ShaderSource\17-GeometryShader.fs" />
+    <None Include="ShaderSource\17-VertexShader.vs" />
+    <None Include="ShaderSource\18-GeometryShader.fs" />
+    <None Include="ShaderSource\18-VertexShader.vs" />
+    <None Include="ShaderSource\19-GeometryShader.fs" />
+    <None Include="ShaderSource\19-VertexShader.vs" />
+    <None Include="ShaderSource\20-GeometryShader.fs" />
+    <None Include="ShaderSource\20-VertexShader.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

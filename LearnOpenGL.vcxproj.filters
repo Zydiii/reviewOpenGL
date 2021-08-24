@@ -116,6 +116,42 @@
     <ClInclude Include="26-lighting.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="27-perspectiveLighting.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="28-GouraudLighting.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="29-Material.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="30-TextureLighting.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="31-EmissionMap.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="32-ParallelLighting.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="33-pointLighting.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="34-SpotLighting.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="35-MultipleLight.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="36-Assimp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="model.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="ShaderSource\10-GeometryShader.fs">
@@ -152,6 +188,36 @@
       <Filter>资源文件</Filter>
     </None>
     <None Include="ShaderSource\15-VertexShader.vs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="ShaderSource\16-GeometryShader.fs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="ShaderSource\16-VertexShader.vs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="ShaderSource\17-GeometryShader.fs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="ShaderSource\17-VertexShader.vs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="ShaderSource\18-GeometryShader.fs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="ShaderSource\18-VertexShader.vs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="ShaderSource\19-GeometryShader.fs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="ShaderSource\19-VertexShader.vs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="ShaderSource\20-GeometryShader.fs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="ShaderSource\20-VertexShader.vs">
       <Filter>资源文件</Filter>
     </None>
   </ItemGroup>
