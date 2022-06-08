@@ -43,6 +43,8 @@ int assimpModel()
     /* 加载模型 */
     Model ourModel("Source/model/flight/commander.obj");
 
+    //glfwSwapInterval(0);
+
     /* 渲染循环 */
     while (!glfwWindowShouldClose(window))
     {
@@ -74,7 +76,7 @@ int assimpModel()
         calDepth();
 
         /* 交换缓冲区 */
-        glfwSwapBuffers(window);
+        //glfwSwapBuffers(window);
         glfwPollEvents();
 
         cout << "cost time:" << TC.getTimerMilliSec() << "ms" << endl;

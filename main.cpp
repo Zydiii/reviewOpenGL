@@ -74,5 +74,13 @@ int main()
 	//drawMultipleLight();
 	assimpModel();
 
+	/*TimerClock TC;
+	TC.update();
+	float test[10000][10000];
+	for (int i = 0; i < 100000; i++)
+		int a = test[i * i % 10000][i * 2 % 10000];
+	cout << "cost time:" << TC.getTimerMilliSec() << "ms" << endl;
+	cout << "cost time:" << TC.getTimerMicroSec() << "us" << endl;*/
+
 	return 0;
 }
