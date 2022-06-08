@@ -8,6 +8,7 @@ int assimpModel()
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    //glfwWindowHint(GLFW_VISIBLE, GL_TRUE);
 
     /* 设置窗口 */
     GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
@@ -40,11 +41,14 @@ int assimpModel()
     Shader ourShader("ShaderSource/30-VertexShader.vs", "ShaderSource/30-GeometryShader.fs");
 
     /* 加载模型 */
-    Model ourModel("Source/model/nanosuit/nanosuit.obj");
+    Model ourModel("Source/model/flight/commander.obj");
 
     /* 渲染循环 */
     while (!glfwWindowShouldClose(window))
     {
+        cout << "Frame" << endl;
+        TC.update();
+
         /* 输入检测 */
         processInput(window);
 
@@ -66,9 +70,15 @@ int assimpModel()
         ourShader.setMat4("model", model);
         ourModel.Draw(ourShader);
 
+        /* 统计深度 */
+        calDepth();
+
         /* 交换缓冲区 */
         glfwSwapBuffers(window);
         glfwPollEvents();
+
+        cout << "cost time:" << TC.getTimerMilliSec() << "ms" << endl;
+        //cout << "cost time:" << TC.getTimerMicroSec() << "us" << endl;
     }
 
     /* 释放资源 */

@@ -1,5 +1,7 @@
 #pragma once
 
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
@@ -12,6 +14,7 @@
 #include "camera.h"
 #include "model.h"
 #include "mesh.h"
+#include "TimerClock.h"
 
 // settings
 const unsigned int SCR_WIDTH = 800;
@@ -31,6 +34,12 @@ float lastFrame = 0.0f; // 上一帧的时间
 // 光源的位置
 glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 
+// 保存深度图
+int arrLen = SCR_WIDTH * SCR_HEIGHT;
+GLbyte* colorArr = new GLbyte[arrLen];
+
+TimerClock TC;
+
 /* 窗口大小调整与视口调整回调函数 */
 // 当用户改变窗口的大小的时候，视口也应该被调整。我们可以对窗口注册一个回调函数(Callback Function)，它会在每次窗口大小被调整的时候被调用
 // 这个帧缓冲大小函数需要一个GLFWwindow作为它的第一个参数，以及两个整数表示窗口的新维度。每当窗口改变大小，GLFW会调用这个函数并填充相应的参数供你处理。
@@ -42,6 +51,30 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
     // glViewport函数前两个参数控制窗口左下角的位置。第三个和第四个参数控制渲染窗口的宽度和高度（像素）
     // OpenGL幕后使用glViewport中定义的位置和宽高进行2D坐标的转换，将OpenGL中的位置坐标转换为你的屏幕坐标。
     glViewport(0, 0, width, height);
+}
+
+void calDepth() {
+    /*string _str = "test.txt";
+    FILE* pFile = NULL;
+    pFile = fopen(_str.c_str(), "wt");
+    if (!pFile) { fprintf(stderr, "error \n"); exit(-1); }*/
+
+    /*for (int i = 0; i < SCR_WIDTH * SCR_HEIGHT * 3; i++) {
+        fprintf(pFile, "%d\n", colorArr[i]);
+    }
+    fclose(pFile);
+    printf("color data saved! \n");*/
+
+    // 保存深度图
+    GLint viewPort[4] = { 0 };
+    glGetIntegerv(GL_VIEWPORT, viewPort);
+    glReadPixels(viewPort[0], viewPort[1], viewPort[2], viewPort[3], GL_RED, GL_UNSIGNED_BYTE, colorArr);
+    int num = 0;
+    for (int i = 0; i < SCR_WIDTH * SCR_HEIGHT; i++) {
+        if (colorArr[i] < 0)
+            num++;
+    }
+    cout << "num: " << num << endl;
 }
 
 /* 输入控制 */
